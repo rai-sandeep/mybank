@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "3f8743de-790f-4309-834b-a8c2e89180c2",
+		"name": "mybank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3894788"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transactions?amount=25&timestamp=2022-12-19T23:40-0130&reference=shopped at flipkart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "25"
+						},
+						{
+							"key": "timestamp",
+							"value": "2022-12-19T23:40-0130"
+						},
+						{
+							"key": "reference",
+							"value": "shopped at flipkart"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transactions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

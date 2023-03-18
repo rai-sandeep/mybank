@@ -15,8 +15,8 @@ public class TransactionService {
         return transactions;
     }
 
-    public void create(Integer amount, ZonedDateTime timestamp, String reference) {
+    public void create(Integer amount, String reference) {
         transactions.add(new Transaction(
-                UUID.randomUUID().toString(), amount, timestamp, reference));
+                UUID.randomUUID().toString(), amount, ZonedDateTime.now(), reference));
     }
 }
