@@ -11,15 +11,18 @@ public class Transaction {
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mmZ")
     private ZonedDateTime timestamp;
     private String reference;
+    private String bankSlogan;
 
     public Transaction() {
     }
 
-    public Transaction(String id, Integer amount, ZonedDateTime timestamp, String reference) {
+    public Transaction(String id, Integer amount, ZonedDateTime timestamp,
+                       String reference, String bankSlogan) {
         this.id = id;
         this.amount = amount;
         this.timestamp = timestamp;
         this.reference = reference;
+        this.bankSlogan = bankSlogan;
     }
 
     public String getId() {
@@ -52,5 +55,13 @@ public class Transaction {
 
     public void setReference(String reference) {
         this.reference = reference;
+    }
+
+    public String getBankSlogan() {
+        return bankSlogan;
+    }
+
+    public void setBankSlogan(String bankSlogan) {
+        this.bankSlogan = bankSlogan;
     }
 }

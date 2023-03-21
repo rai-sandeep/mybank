@@ -13,12 +13,12 @@ public class ApplicationLauncher {
         Tomcat tomcat = new Tomcat();
 
         String serverPort = System.getProperty("server.port");
-        tomcat.setPort(serverPort == null ? 8080: Integer.valueOf(serverPort));
+        tomcat.setPort(serverPort == null ? 8080: Integer.parseInt(serverPort));
 
         tomcat.getConnector();
 
         Context context = tomcat.addContext("", null);
-        Wrapper servlet = tomcat.addServlet(context, "myBankServlet", new MyBankServlet());
+        Wrapper servlet = Tomcat.addServlet(context, "myBankServlet", new MyBankServlet());
 
         servlet.setLoadOnStartup(1);
         servlet.addMapping("/*");
